@@ -62,10 +62,23 @@ cout << "Which linked list method should we use?" << endl;
         reviewCount++;
         totalRating += rating;
         
-        // Continue?
+        // Continue Y/ N
         cout << "Enter another review? Y/N: ";
         cin >> choice;
         cin.ignore();
+    }
+   // Display reviews
+    cout << "Outputting all reviews:\n";
+    ReviewNode* current = head;
+    for (int i = 1; current != nullptr; i++) {
+        cout << "    > Review #" << i << ": " << current->rating 
+             << ": " << current->comment << endl;
+        current = current->next;
+    }
+
+// Show average
+    if (reviewCount > 0) {
+        cout << "    > Average: " << (totalRating / reviewCount) << endl;
     }
 
 
