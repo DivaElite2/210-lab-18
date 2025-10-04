@@ -81,6 +81,12 @@ cout << "Which linked list method should we use?" << endl;
         cout << "    > Average: " << (totalRating / reviewCount) << endl;
     }
 
+//housekeeping
+ while (head != nullptr) {
+        ReviewNode* temp = head;
+        head = head->next;
+        delete temp;
+    }
 
     return 0;
 }
